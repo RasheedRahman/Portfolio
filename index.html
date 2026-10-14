@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Mohamed Rasheed Rahman — Flutter Developer</title>
-<meta name="description" content="Portfolio of Mohamed Rasheed Rahman, Flutter Developer — production apps: Dr. Meshal, Smart Masjid, KARS and more." />
+<title>Mohamed Rasheed Rahman — Full-Stack & Mobile Developer</title>
+<meta name="description" content="Portfolio of Mohamed Rasheed Rahman, Full-Stack & Mobile Developer — Sopzy SaaS platform (React + FastAPI + Flutter + AWS) plus production apps: Dr. Meshal, Smart Masjid, KARS and more." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -26,7 +26,35 @@
   --shadow-md: 0 8px 24px rgba(15,23,42,0.08);
   --shadow-lg: 0 20px 48px rgba(15,23,42,0.12);
   --radius: 16px;
+  --nav-bg: rgba(255,255,255,0.85);
+  --nav-menu-bg: rgba(255,255,255,0.98);
 }
+[data-theme="dark"] {
+  --accent: #60a5fa;
+  --accent-dark: #93c5fd;
+  --accent-soft: rgba(96,165,250,0.12);
+  --accent-border: rgba(96,165,250,0.35);
+  --bg: #0f172a;
+  --bg-alt: #162032;
+  --surface: #1e293b;
+  --border: #334155;
+  --text: #f1f5f9;
+  --muted: #94a3b8;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.35);
+  --shadow-md: 0 8px 24px rgba(0,0,0,0.4);
+  --shadow-lg: 0 20px 48px rgba(0,0,0,0.5);
+  --nav-bg: rgba(15,23,42,0.85);
+  --nav-menu-bg: rgba(30,41,59,0.98);
+}
+[data-theme="dark"] .btn-outline { background: var(--surface); border-color: var(--border); color: var(--text); }
+[data-theme="dark"] .float-badge { background: var(--surface); }
+[data-theme="dark"] .chip { background: var(--surface); }
+[data-theme="dark"] footer { background: var(--bg); }
+[data-theme="dark"] .skill-track { background: #334155; }
+[data-theme="dark"] .hero-photo { background: linear-gradient(160deg,#1e293b,#334155); }
+[data-theme="dark"] .car-btn { background: rgba(30,41,59,0.92); color: #fff; }
+[data-theme="dark"] ::-webkit-scrollbar-thumb { background: #475569; }
+[data-theme="dark"] .hero-avail, [data-theme="dark"] .current-badge, [data-theme="dark"] .proj-note { background: rgba(16,185,129,0.12); border-color: rgba(16,185,129,0.35); color: #6ee7b7; }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 body { font-family: var(--font-body); background: var(--bg); color: var(--text); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
@@ -44,7 +72,7 @@ nav {
   position: fixed; top:0; left:0; right:0; z-index:500;
   padding: 0 5%; height: 68px;
   display: flex; align-items: center; justify-content: space-between;
-  background: rgba(255,255,255,0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+  background: var(--nav-bg); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border);
 }
 .nav-logo {
@@ -65,6 +93,14 @@ nav {
 .nav-links a:hover::after { width:100%; }
 .nav-hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none; padding:8px; }
 .nav-hamburger span { width:22px; height:2px; background:var(--text); border-radius:1px; transition:0.3s; }
+.nav-actions { display:flex; align-items:center; gap:8px; }
+.theme-toggle {
+  width:40px; height:40px; border-radius:12px; cursor:pointer;
+  background:var(--surface); border:1px solid var(--border); color:var(--text);
+  font-size:18px; display:flex; align-items:center; justify-content:center;
+  transition:transform 0.2s, border-color 0.2s, color 0.2s; box-shadow:var(--shadow-sm);
+}
+.theme-toggle:hover { transform:translateY(-2px); border-color:var(--accent-border); color:var(--accent); }
 
 /* LAYOUT */
 main { position:relative; z-index:1; }
@@ -162,12 +198,12 @@ section { padding: 96px 5%; position:relative; }
 .chip { padding:8px 16px; border-radius:100px; font-size:13px; font-weight:500; border:1px solid var(--border); background:#fff; color:var(--muted); transition:all 0.22s; cursor:default; box-shadow:var(--shadow-sm); }
 .chip:hover { transform:translateY(-3px); color:var(--accent); border-color:var(--accent-border); background:var(--accent-soft); }
 /* EXPERIENCE */
-.timeline { position:relative; max-width:880px; margin:0 auto; }
+.timeline { position:relative; max-width:980px; margin:0 auto; }
 .timeline::before { content:''; position:absolute; left:19px; top:6px; bottom:6px; width:2px; background:linear-gradient(to bottom, var(--accent), #93c5fd); border-radius:1px; }
 .tl-item { position:relative; padding-left:62px; margin-bottom:40px; }
 .tl-item:last-child { margin-bottom:0; }
 .tl-dot { position:absolute; left:11px; top:22px; width:18px; height:18px; border-radius:50%; background:linear-gradient(135deg,var(--accent),#60a5fa); border:3px solid #fff; box-shadow:0 0 0 3px rgba(37,99,235,0.2); z-index:2; }
-.tl-card { background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:28px 32px; box-shadow:var(--shadow-sm); transition:transform 0.25s, box-shadow 0.25s, border-color 0.25s; }
+.tl-card { background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:28px 28px; box-shadow:var(--shadow-sm); transition:transform 0.25s, box-shadow 0.25s, border-color 0.25s; }
 .tl-card:hover { transform:translateY(-3px); box-shadow:var(--shadow-md); border-color:var(--accent-border); }
 .tl-header { display:flex; flex-wrap:wrap; gap:12px; align-items:flex-start; justify-content:space-between; margin-bottom:14px; }
 .tl-role { font-family:var(--font-head); font-size:19px; font-weight:700; }
@@ -282,7 +318,7 @@ section { padding: 96px 5%; position:relative; }
 .btn-wa:hover { background:#1eb85a; transform:translateY(-2px); box-shadow:0 10px 24px rgba(0,0,0,0.2); }
 .cta-btns { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
 
-footer { text-align:center; padding:30px 5%; border-top:1px solid var(--border); color:var(--muted); font-size:14px; background:#fff; }
+footer { text-align:center; padding:30px 5%; border-top:1px solid var(--border); color:var(--muted); font-size:14px; background:var(--bg); }
 footer strong { color:var(--text); font-weight:600; }
 
 /* RESPONSIVE */
@@ -297,10 +333,18 @@ footer strong { color:var(--text); font-weight:600; }
   .hero-grid,.skills-grid,.contact-grid,.edu-grid { grid-template-columns:1fr; }
   .hero-photo-wrap { order:-1; }
   .fb-2 { left:-10px; }
-  .nav-links { display:none; flex-direction:column; position:absolute; top:68px; left:0; right:0; background:rgba(255,255,255,0.98); padding:22px 5%; gap:18px; border-bottom:1px solid var(--border); backdrop-filter:blur(16px); }
+  .nav-links { display:none; flex-direction:column; position:absolute; top:68px; left:0; right:0; background:var(--nav-menu-bg); padding:22px 5%; gap:18px; border-bottom:1px solid var(--border); backdrop-filter:blur(16px); }
   .nav-links.open { display:flex; }
   .nav-hamburger { display:flex; }
   #hero { min-height:auto; padding-top:110px; padding-bottom:80px; }
+  .timeline::before { display:none; }
+  .tl-item { padding-left:0; margin-bottom:24px; }
+  .tl-dot { display:none; }
+  .tl-card { padding:20px 18px; }
+  .tl-header { flex-direction:column; gap:8px; }
+  .tl-meta { align-items:flex-start; }
+  .tl-role { font-size:17px; }
+  .tl-desc { padding-left:16px; font-size:13.5px; }
 }
 </style>
 </head>
@@ -315,9 +359,12 @@ footer strong { color:var(--text); font-weight:600; }
     <li><a href="#education">Education</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <button class="nav-hamburger" id="hamburger" aria-label="Menu" onclick="document.getElementById('navLinks').classList.toggle('open')">
-    <span></span><span></span><span></span>
-  </button>
+  <div class="nav-actions">
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">🌙</button>
+    <button class="nav-hamburger" id="hamburger" aria-label="Menu" onclick="document.getElementById('navLinks').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
 </nav>
 
 <main>
@@ -329,9 +376,10 @@ footer strong { color:var(--text); font-weight:600; }
       <div class="hero-avail"><span class="avail-dot"></span>Open to opportunities</div>
       <h1 class="hero-name">Mohamed<br/>Rasheed <em>Rahman</em></h1>
       <p class="hero-role">
-        <strong>Flutter Developer</strong> with 1 year of experience building
-        cross-platform apps for Android, iOS, Web &amp; Desktop — with
-        <strong>3 production apps</strong> shipped to the stores.
+        <strong>Full-Stack & Mobile Developer</strong> building SaaS platforms &amp;
+        cross-platform apps with <strong>React, FastAPI & Flutter</strong> —
+        currently shipping <strong>Sopzy</strong> (POS + customer + delivery)
+        plus <strong>3 production apps</strong> on the stores.
       </p>
       <div class="hero-ctas">
         <a href="#contact" class="btn btn-primary">Get in Touch</a>
@@ -345,10 +393,10 @@ footer strong { color:var(--text); font-weight:600; }
           <img src="profile%20image.jpeg" alt="Mohamed Rasheed Rahman" />
         </div>
         <div class="hero-photo-name">Mohamed Rasheed</div>
-        <div class="hero-photo-role">Flutter Developer · Dart</div>
+        <div class="hero-photo-role">Full-Stack · React / FastAPI / Flutter</div>
         <div class="hero-stats">
           <div class="stat-item"><div class="stat-val">1+</div><div class="stat-label">Yr Exp</div></div>
-          <div class="stat-item"><div class="stat-val">4</div><div class="stat-label">Apps Built</div></div>
+          <div class="stat-item"><div class="stat-val">5</div><div class="stat-label">Projects</div></div>
           <div class="stat-item"><div class="stat-val">7.81</div><div class="stat-label">CGPA</div></div>
         </div>
       </div>
@@ -437,7 +485,7 @@ footer strong { color:var(--text); font-weight:600; }
 
 </main>
 <footer>
-  <p>Designed &amp; built by <strong>Mohamed Rasheed Rahman</strong> — Flutter Developer · Puducherry, India · 2026</p>
+  <p>Designed &amp; built by <strong>Mohamed Rasheed Rahman</strong> — Full-Stack & Mobile Developer · Puducherry, India · 2026</p>
 </footer>
 
 <script>
@@ -445,26 +493,41 @@ footer strong { color:var(--text); font-weight:600; }
 const enc = p => p.split('/').map(encodeURIComponent).join('/');
 
 const skills = [
-  { name: 'Flutter / Dart', pct: 92 },
-  { name: 'Clean Architecture / MVVM', pct: 85 },
-  { name: 'Firebase', pct: 82 },
-  { name: 'GraphQL & REST API', pct: 85 },
-  { name: 'BLoC / Cubit / GetX / Provider', pct: 88 },
-  { name: 'Cross-Platform Dev', pct: 86 },
-  { name: 'UI/UX & Responsive Design', pct: 83 },
-  { name: 'Git / GitHub', pct: 78 },
+  { name: 'React / TypeScript', pct: 88 },
+  { name: 'FastAPI / Python', pct: 86 },
+  { name: 'Flutter / Dart', pct: 90 },
+  { name: 'MongoDB / PostgreSQL', pct: 83 },
+  { name: 'GraphQL & REST API', pct: 86 },
+  { name: 'BLoC / GetX / TanStack Query', pct: 85 },
+  { name: 'AWS / Docker / CI-CD', pct: 80 },
+  { name: 'Git / GitHub', pct: 80 },
 ];
 
 const chips = [
-  'Dart','Flutter','Firebase','GraphQL','REST API','JSON','BLoC','Cubit','GetX','Provider',
-  'Riverpod','GetIt','Go Router','Hive','Shared Prefs','MVVM','Clean Arch',
-  'Push Notifications','FCM','Flutter DevTools','Node.js','PostgreSQL','KNET Payments',
-  'Google Cloud','Java','Python','Android','iOS','Web','Desktop','Git','GitHub'
+  'React','TypeScript','Vite','Tailwind','TanStack Query','React Router','Recharts',
+  'FastAPI','Python','MongoDB','Beanie','PostgreSQL','JWT','Node.js',
+  'AWS S3','CloudFront','ECS','ECR','Docker','PhonePe',
+  'Dart','Flutter','Firebase','FCM','GraphQL','REST API','BLoC','GetX','Provider',
+  'Riverpod','Hive','Go Router','Clean Arch','MVVM','Git','GitHub'
 ];
 
 const experience = [
   {
-    role: 'Flutter Developer',
+    role: 'Full-Stack Developer',
+    company: 'Qifaw Technologies',
+    dates: 'September 2026 – Present',
+    location: 'Remote',
+    current: true,
+    desc: [
+      'Building Sopzy — multi-platform SaaS restaurant POS: React web platform (dashboard analytics, Captain POS, KOT, orders, catalog, QR ordering) + FastAPI + MongoDB backend.',
+      'Built two Flutter apps in the same ecosystem: Sopzy Food customer app (search, cart, coupons, UPI via PhonePe, live rider tracking) and Delivery Partner app (accept/reject, navigate, OTP handover).',
+      'Implemented JWT auth with RBAC (super-admin / store-admin / captain / kot), split Cash + UPI payments, refunds, and dashboard cash-box accounting.',
+      'Shipping to production on AWS: S3 + CloudFront frontend, ECS + ECR backend, CodeBuild deploys with health-proofed releases.',
+    ],
+    badges: ['React','FastAPI','MongoDB','Flutter','AWS','Docker','PhonePe','TanStack Query'],
+  },
+  {
+    role: 'Full Stack Flutter Developer',
     company: 'Safatech Integrated Solutions Pvt. Ltd.',
     dates: 'March 2026 – Present',
     location: null,
@@ -500,6 +563,15 @@ const experience = [
 
 const projects = [
   {
+    name: 'Sopzy — SaaS Restaurant Platform',
+    tag: 'Flagship SaaS · In Production',
+    tagClass: 'tag-production',
+    note: '🍽️ Web Platform + Customer App + Delivery App — one ecosystem',
+    desc: 'Multi-platform POS: Web admin (dashboard analytics, Captain POS, POS/Sopzy orders, menu catalog with XLSX import, QR dine-in ordering with PhonePe UPI) + Flutter customer food app (cart, coupons, live tracking) + Flutter delivery partner app (accept, navigate, OTP delivered). FastAPI + MongoDB backend with JWT RBAC, split Cash+UPI, AWS S3/CloudFront + ECS deploy.',
+    stack: ['React','FastAPI','MongoDB','Flutter','AWS','Docker','PhonePe','Firebase'],
+    imgs: ['Sopzy/6.png','Sopzy/7.png','Sopzy/1.png','Sopzy/2.png','Sopzy/3.1.png','Sopzy/3.2.png','Sopzy/4.png','Sopzy/5.png'],
+  },
+  {
     name: 'Dr. Meshal',
     tag: 'Production App',
     tagClass: 'tag-production',
@@ -530,7 +602,7 @@ const projects = [
     name: 'Chat Application',
     tag: 'Personal Project',
     tagClass: 'tag-personal',
-    note: '✍️ 90%+ hand-written code — built without AI',
+    note: '🛠️ Built from scratch to learn real-time systems',
     desc: 'Real-time messaging app supporting text and multimedia communication with Firebase-powered authentication and live data synchronisation.',
     stack: ['Flutter','Firebase Auth','Cloud Firestore','Provider'],
     imgs: ['Chat Application/1.png','Chat Application/2.png'],
@@ -569,8 +641,9 @@ const contactInfo = [
 ];
 
 const marqueeItems = [
-  'Flutter Developer','Safatech Integrated Solutions','Dr. Meshal App','KARS — Play Store & App Store',
-  'Smart Masjid','Clean Architecture','GraphQL & REST API','Cross-Platform Dev','BLoC / GetX / Cubit','BCA Graduate'
+  'Full-Stack & Mobile Developer','Qifaw Technologies (Remote)','Sopzy SaaS Platform',
+  'React + FastAPI + Flutter','Captain POS & KOT','Dashboard Analytics',
+  'Safatech Integrated Solutions','KARS — Play Store & App Store','Dr. Meshal App','Smart Masjid','BCA Graduate'
 ];
 
 /* ====== RENDER ====== */
@@ -733,8 +806,24 @@ function initSkillBars() {
   document.querySelectorAll('.skill-fill').forEach(f => io.observe(f));
 }
 
+/* ====== THEME (light default) ====== */
+function initTheme() {
+  const btn = document.getElementById('themeToggle');
+  const saved = localStorage.getItem('theme');
+  const theme = saved === 'dark' ? 'dark' : 'light';
+  document.documentElement.setAttribute('data-theme', theme);
+  btn.textContent = theme === 'dark' ? '☀️' : '🌙';
+  btn.addEventListener('click', () => {
+    const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+    btn.textContent = next === 'dark' ? '☀️' : '🌙';
+  });
+}
+
 /* ====== BOOT ====== */
 render();
+initTheme();
 initReveal();
 initSkillBars();
 initCarousels();
