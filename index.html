@@ -351,7 +351,7 @@ footer strong { color:var(--text); font-weight:600; }
 <body>
 
 <nav id="navbar">
-  <a href="#hero" class="nav-logo">Mohamed Rasheed</a>
+  <a href="#hero" class="nav-logo">Mohamed Rasheed Rahman</a>
   <ul class="nav-links" id="navLinks">
     <li><a href="#skills">Skills</a></li>
     <li><a href="#experience">Experience</a></li>
@@ -378,7 +378,7 @@ footer strong { color:var(--text); font-weight:600; }
       <p class="hero-role">
         <strong>Full-Stack & Mobile Developer</strong> building SaaS platforms &amp;
         cross-platform apps with <strong>React, FastAPI & Flutter</strong> —
-        currently shipping <strong>Sopzy</strong> (POS + customer + delivery)
+        currently shipping <strong>Sopzy</strong> (POS + customer + delivery) and <strong>Carr</strong> (Super Admin Panel + Admin Panel + Ride Booking App + Driver App + Driver Admin Panel)
         plus <strong>3 production apps</strong> on the stores.
       </p>
       <div class="hero-ctas">
@@ -392,11 +392,11 @@ footer strong { color:var(--text); font-weight:600; }
         <div class="hero-photo">
           <img src="profile%20image.jpeg" alt="Mohamed Rasheed Rahman" />
         </div>
-        <div class="hero-photo-name">Mohamed Rasheed</div>
-        <div class="hero-photo-role">Full-Stack · React / FastAPI / Flutter</div>
+        <div class="hero-photo-name">Mohamed Rasheed Rahman</div>
+        <div class="hero-photo-role">Full-Stack & Mobile · React / FastAPI / Flutter</div>
         <div class="hero-stats">
-          <div class="stat-item"><div class="stat-val">1+</div><div class="stat-label">Yr Exp</div></div>
-          <div class="stat-item"><div class="stat-val">5</div><div class="stat-label">Projects</div></div>
+          <div class="stat-item"><div class="stat-val">1.5</div><div class="stat-label">Yr Exp</div></div>
+          <div class="stat-item"><div class="stat-val">6</div><div class="stat-label">Projects</div></div>
           <div class="stat-item"><div class="stat-val">7.81</div><div class="stat-label">CGPA</div></div>
         </div>
       </div>
@@ -508,13 +508,13 @@ const chips = [
   'FastAPI','Python','MongoDB','Beanie','PostgreSQL','JWT','Node.js',
   'AWS S3','CloudFront','ECS','ECR','Docker','PhonePe',
   'Dart','Flutter','Firebase','FCM','GraphQL','REST API','BLoC','GetX','Provider',
-  'Riverpod','Hive','Go Router','Clean Arch','MVVM','Git','GitHub'
+  'Riverpod','Hive','Go Router','Clean Arch','MVVM','WebSocket','Leaflet','Git','GitHub'
 ];
 
 const experience = [
   {
     role: 'Full-Stack Developer',
-    company: 'Qifaw Technologies',
+    company: 'Qifaw Technologies Pvt. Ltd.',
     dates: 'September 2026 – Present',
     location: 'Remote',
     current: true,
@@ -523,15 +523,16 @@ const experience = [
       'Built two Flutter apps in the same ecosystem: Sopzy Food customer app (search, cart, coupons, UPI via PhonePe, live rider tracking) and Delivery Partner app (accept/reject, navigate, OTP handover).',
       'Implemented JWT auth with RBAC (super-admin / store-admin / captain / kot), split Cash + UPI payments, refunds, and dashboard cash-box accounting.',
       'Shipping to production on AWS: S3 + CloudFront frontend, ECS + ECR backend, CodeBuild deploys with health-proofed releases.',
+      'Also building Carr — taxi booking ecosystem: React admin (live map, rides, drivers, companies, rates) + FastAPI/WebSocket backend + customer & driver Flutter apps.',
     ],
     badges: ['React','FastAPI','MongoDB','Flutter','AWS','Docker','PhonePe','TanStack Query'],
   },
   {
     role: 'Full Stack Flutter Developer',
     company: 'Safatech Integrated Solutions Pvt. Ltd.',
-    dates: 'March 2026 – Present',
+    dates: 'March 2026 – October 2026',
     location: null,
-    current: true,
+    current: false,
     desc: [
       'Developed production-level cross-platform Flutter applications for Android, iOS, web, and desktop.',
       'Built and maintained three production applications: Dr. Meshal (healthcare platform), Smart Masjid (mosque management), and KARS (membership platform, live on Play Store & App Store).',
@@ -570,6 +571,15 @@ const projects = [
     desc: 'Multi-platform POS: Web admin (dashboard analytics, Captain POS, POS/Sopzy orders, menu catalog with XLSX import, QR dine-in ordering with PhonePe UPI) + Flutter customer food app (cart, coupons, live tracking) + Flutter delivery partner app (accept, navigate, OTP delivered). FastAPI + MongoDB backend with JWT RBAC, split Cash+UPI, AWS S3/CloudFront + ECS deploy.',
     stack: ['React','FastAPI','MongoDB','Flutter','AWS','Docker','PhonePe','Firebase'],
     imgs: ['Sopzy/6.png','Sopzy/7.png','Sopzy/1.png','Sopzy/2.png','Sopzy/3.1.png','Sopzy/3.2.png','Sopzy/4.png','Sopzy/5.png'],
+  },
+  {
+    name: 'Carr — Taxi Booking Platform',
+    tag: 'Taxi Booking · Web + 2 Apps',
+    tagClass: 'tag-production',
+    note: '🚕 Customer + Driver + Admin — one ecosystem',
+    desc: 'Full cab booking system: React admin dashboard (live map, rides, drivers, companies, per-driver rates, promos) + FastAPI/MongoDB backend with WebSocket live tracking, nearest-driver dispatch, fare breakdown, wallet, SOS & ratings + Flutter customer app (map picker, fare estimates, booking, live tracking) and driver app (online toggle, accept/complete, earnings).',
+    stack: ['React','FastAPI','MongoDB','WebSocket','Leaflet','Flutter','Bloc','Go Router'],
+    imgs: ['Carr/1.png','Carr/2.png','Carr/3.png','Carr/4.png','Carr/5.png','Carr/6.png','Carr/7.png','Carr/8.png','Carr/9.png','Carr/10.png','Carr/11.png'],
   },
   {
     name: 'Dr. Meshal',
@@ -641,7 +651,7 @@ const contactInfo = [
 ];
 
 const marqueeItems = [
-  'Full-Stack & Mobile Developer','Qifaw Technologies (Remote)','Sopzy SaaS Platform',
+  'Full-Stack & Mobile Developer','Qifaw Technologies Pvt. Ltd. (Remote)','Sopzy SaaS Platform','Carr Taxi Booking',
   'React + FastAPI + Flutter','Captain POS & KOT','Dashboard Analytics',
   'Safatech Integrated Solutions','KARS — Play Store & App Store','Dr. Meshal App','Smart Masjid','BCA Graduate'
 ];
